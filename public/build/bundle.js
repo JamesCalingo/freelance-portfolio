@@ -430,7 +430,18 @@ var app = (function () {
     	let t1;
     	let h2;
     	let t3;
-    	let div;
+    	let div0;
+    	let t5;
+    	let div1;
+    	let t7;
+    	let div2;
+    	let t9;
+    	let div3;
+    	let label;
+    	let t11;
+    	let input;
+    	let t12;
+    	let p;
 
     	const block = {
     		c: function create() {
@@ -442,16 +453,44 @@ var app = (function () {
     			h2 = element("h2");
     			h2.textContent = "Developing websites and applications for you.";
     			t3 = space();
-    			div = element("div");
-    			div.textContent = "This card will be myw blurbs.";
-    			attr_dev(h1, "class", "svelte-6nay3w");
+    			div0 = element("div");
+    			div0.textContent = "This card will be myw blurbs";
+    			t5 = space();
+    			div1 = element("div");
+    			div1.textContent = "This area will be images of projects";
+    			t7 = space();
+    			div2 = element("div");
+    			div2.textContent = "This will be testemonials";
+    			t9 = space();
+    			div3 = element("div");
+    			label = element("label");
+    			label.textContent = "This will be a contact form";
+    			t11 = space();
+    			input = element("input");
+    			t12 = space();
+    			p = element("p");
+    			p.textContent = "Some ending stuff";
+    			attr_dev(h1, "class", "svelte-14jhpcn");
     			add_location(h1, file, 6, 1, 38);
     			add_location(h2, file, 7, 1, 62);
-    			attr_dev(header, "class", "svelte-6nay3w");
+    			attr_dev(header, "class", "svelte-14jhpcn");
     			add_location(header, file, 5, 0, 28);
-    			attr_dev(div, "class", "card svelte-6nay3w");
-    			add_location(div, file, 9, 1, 128);
-    			attr_dev(main, "class", "svelte-6nay3w");
+    			attr_dev(div0, "class", "card svelte-14jhpcn");
+    			add_location(div0, file, 9, 1, 128);
+    			attr_dev(div1, "class", "card svelte-14jhpcn");
+    			add_location(div1, file, 13, 1, 188);
+    			attr_dev(div2, "class", "card svelte-14jhpcn");
+    			add_location(div2, file, 17, 1, 256);
+    			attr_dev(label, "for", "text");
+    			add_location(label, file, 22, 1, 333);
+    			attr_dev(input, "type", "text");
+    			attr_dev(input, "placeholder", "People can type stuff in here");
+    			attr_dev(input, "class", "svelte-14jhpcn");
+    			add_location(input, file, 23, 2, 389);
+    			attr_dev(div3, "class", "card svelte-14jhpcn");
+    			add_location(div3, file, 21, 1, 313);
+    			add_location(p, file, 26, 0, 464);
+    			attr_dev(main, "class", "svelte-14jhpcn");
     			add_location(main, file, 4, 0, 21);
     		},
     		l: function claim(nodes) {
@@ -464,7 +503,18 @@ var app = (function () {
     			append_dev(header, t1);
     			append_dev(header, h2);
     			append_dev(main, t3);
-    			append_dev(main, div);
+    			append_dev(main, div0);
+    			append_dev(main, t5);
+    			append_dev(main, div1);
+    			append_dev(main, t7);
+    			append_dev(main, div2);
+    			append_dev(main, t9);
+    			append_dev(main, div3);
+    			append_dev(div3, label);
+    			append_dev(div3, t11);
+    			append_dev(div3, input);
+    			append_dev(main, t12);
+    			append_dev(main, p);
     		},
     		p: noop,
     		i: noop,
