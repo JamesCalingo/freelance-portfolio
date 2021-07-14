@@ -1,36 +1,88 @@
 <script>
+  // 	const card = document.querySelectorAll(".card")
+
+  // function alert() {
+  // 	alert("I got a click!")
+  // }
+  // 	card.addEventListener("click", alert)
 </script>
 
 <main>
   <header>
-    <h1>James Calingo</h1>
-    <h2>Developing websites and applications for you.</h2>
+    <h1>JAMES CALINGO</h1>
   </header>
-  <div class="card">
-    <div class="headline">
-      Hi! I'm James Calingo, a full stack web developer with experience in
-      modern HTML, CSS, and JavaScript, as well as several frameworks.
+
+  <h2>
+    Hi! I'm James Calingo (or "JC" as my friends call me), a full stack web
+    developer with experience in modern HTML, CSS, and JavaScript, as well as
+    several frameworks.
+  </h2>
+
+  <div id="bullets">
+    <div class="card">
+      <h2>Frameworks</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eum soluta
+        laudantium ducimus iure placeat est totam molestias nobis corporis, iste
+        dolorem in molestiae qui quibusdam ex delectus maxime. Ab.
+      </p>
     </div>
-    <div class="bullets">
-			<div class="card">
-				<h1>card 1</h1>
-			</div>
-			<div class="card">
-				<h1>card 2</h1>
-			</div>
-			<div class="card">
-				<h1>card 3</h1>
-			</div>
-		</div>
+    <div class="card">
+      <h2>BUZZWORD</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        veritatis delectus, deserunt suscipit cumque blanditiis veniam aliquam
+        voluptatum maiores, nesciunt odit debitis aspernatur, hic accusamus
+        excepturi in voluptas eveniet optio.
+      </p>
+    </div>
+    <div class="card">
+      <h2>card 3</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
+        quos tenetur libero soluta. Nihil voluptate, modi atque odit, rem
+        similique, delectus voluptates repellat laborum quasi velit accusantium
+        temporibus tempore quas?
+      </p>
+    </div>
   </div>
 
-  <div class="card">This area will be images of projects</div>
+  <div id="gallery" class="card">
+    This area will be a gallery with images of projects
+  </div>
 
-  <div class="card">This will be testemonials</div>
+  <div id="testemonial" class="card">
+    <h2>What they're saying</h2>
+    <ul>
+      <li>
+        "You're my favorite customer."<br />
+        -Me, to you one day
+      </li>
+      <li>
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+        sequi perspiciatis voluptatibus ipsam odit amet maxime impedit eos saepe
+        reiciendis? Soluta id molestias accusantium sint facere ducimus nulla
+        dolores est."<br />
+        -Some generic Latin text
+      </li>
+			<li>"This isn't actually a quote from anyone. It's just some stuff I'm writing in as a filler quote."<br>
+				-Stranger on the Internet
+			</li>
+    </ul>
+  </div>
 
-  <div class="card">
-    <label for="text">This will be a contact form</label>
-    <input type="text" placeholder="People can type stuff in here" />
+  <div id="contact-form">
+    <h2>Let's get in touch!</h2>
+    <label for="name">Name</label>
+    <input type="text" />
+
+		<label for="email">Email</label>
+		<input type="text">
+
+		<label for="description">Describe your project</label>
+		<textarea name="description" id="description" cols="99" rows="10"></textarea>
+		<br>
+		<button type="submit">Submit</button>
   </div>
 
   <p>Some ending stuff</p>
@@ -44,40 +96,59 @@
   }
 
   header {
+    justify-content: center;
     margin-bottom: 30px;
-    background: blue;
+    height: 150px;
+    line-height: 150px;
+    color: white;
+    background: green;
   }
 
   input {
     width: 80%;
   }
 
+  h1 {
+    font-size: 4em;
+  }
   .card {
     margin-bottom: 50px;
     height: 30vh;
     border: 3px solid green;
-    border-radius: 3px;
+    border-radius: 10px;
   }
 
-	.bullets {
-		display: flex;
-		justify-content: space-evenly;
+	#contact-form {
+		border: 3px solid black;
+		border-radius: 10px;
 	}
-
-	.bullets .card {
-		height: 90%;
-	}
-
-  h1 {
-  color: green;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
 
   @media (min-width: 640px) {
     main {
       max-width: 85%;
     }
+
+    #bullets {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #bullets .card {
+      height: 90%;
+      width: 25%;
+    }
+
+
+
+		#testemonial ul {
+			list-style: none;
+			width: 40%
+		
+		}
+
+		#testemonial li {
+			margin: 15px 0
+		}
   }
 </style>
