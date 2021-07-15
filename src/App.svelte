@@ -1,10 +1,10 @@
 <script>
-  // 	const card = document.querySelectorAll(".card")
+  // 	const button = document.querySelector("button")
 
   // function alert() {
   // 	alert("I got a click!")
   // }
-  // 	card.addEventListener("click", alert)
+  // 	button.addEventListener("click", alert)
 </script>
 
 <main>
@@ -19,26 +19,27 @@
   </h2>
 
   <div id="bullets">
-    <div class="card">
+    <div>
       <h2>Frameworks</h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eum soluta
-        laudantium ducimus iure placeat est totam molestias nobis corporis, iste
-        dolorem in molestiae qui quibusdam ex delectus maxime. Ab.
+      <p class="description">
+        Using the latest frameworks and tools, make a website that looks and
+        functions well on computers, phones, and tablets.
       </p>
     </div>
-    <div class="card">
+
+    <div>
       <h2>BUZZWORD</h2>
-      <p>
+      <p class="description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
         veritatis delectus, deserunt suscipit cumque blanditiis veniam aliquam
         voluptatum maiores, nesciunt odit debitis aspernatur, hic accusamus
         excepturi in voluptas eveniet optio.
       </p>
     </div>
-    <div class="card">
+
+    <div>
       <h2>card 3</h2>
-      <p>
+      <p class="description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
         quos tenetur libero soluta. Nihil voluptate, modi atque odit, rem
         similique, delectus voluptates repellat laborum quasi velit accusantium
@@ -65,9 +66,11 @@
         dolores est."<br />
         -Some generic Latin text
       </li>
-			<li>"This isn't actually a quote from anyone. It's just some stuff I'm writing in as a filler quote."<br>
-				-Stranger on the Internet
-			</li>
+      <li>
+        "This isn't actually a quote from anyone. It's just some stuff I'm
+        writing in as a filler quote."<br />
+        -Stranger on the Internet
+      </li>
     </ul>
   </div>
 
@@ -76,13 +79,13 @@
     <label for="name">Name</label>
     <input type="text" />
 
-		<label for="email">Email</label>
-		<input type="text">
+    <label for="email">Email</label>
+    <input type="text" />
 
-		<label for="description">Describe your project</label>
-		<textarea name="description" id="description" cols="99" rows="10"></textarea>
-		<br>
-		<button type="submit">Submit</button>
+    <label for="description">Describe your project</label>
+    <textarea name="description" id="description" rows="10" />
+    <br />
+    <button type="submit">Submit</button>
   </div>
 
   <p>Some ending stuff</p>
@@ -108,24 +111,36 @@
     width: 80%;
   }
 
-  h1 {
-    font-size: 4em;
-  }
   .card {
     margin-bottom: 50px;
-    height: 30vh;
     border: 3px solid green;
     border-radius: 10px;
   }
 
-	#contact-form {
-		border: 3px solid black;
-		border-radius: 10px;
-	}
+  #contact-form {
+    border: 3px solid black;
+    border-radius: 10px;
+  }
 
   @media (min-width: 640px) {
     main {
       max-width: 85%;
+    }
+
+    h1 {
+      font-size: 4em;
+    }
+
+    input,
+    textarea {
+      width: 50%;
+    }
+
+    .card {
+      margin-bottom: 50px;
+      height: 30vh;
+      border: 3px solid green;
+      border-radius: 10px;
     }
 
     #bullets {
@@ -134,21 +149,21 @@
       justify-content: space-evenly;
     }
 
-    #bullets .card {
-      height: 90%;
+    #bullets div {
       width: 25%;
     }
 
+    .description {
+      font-size: 18pt;
+    }
 
+    #testemonial ul {
+      list-style: none;
+      width: 40%;
+    }
 
-		#testemonial ul {
-			list-style: none;
-			width: 40%
-		
-		}
-
-		#testemonial li {
-			margin: 15px 0
-		}
+    #testemonial li {
+      margin: 15px 0;
+    }
   }
 </style>
