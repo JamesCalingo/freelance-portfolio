@@ -49,7 +49,7 @@
 
   <div id="paragraph">
     <div>
-    <p>At our company, we do our best to make sure YOU are satisfied. We work extensively for your satisfaction - which is basically what I said in the first sentence.</p>
+    <h4>At our company, we do our best to make sure YOU are satisfied. We work extensively for your satisfaction - which is basically what I said in the first sentence.</h4>
   </div>
     <div class="card">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magni, vero debitis commodi corporis ad, praesentium consectetur voluptatum in veniam aperiam sunt nisi rem. Eos quam modi eaque omnis sed.
@@ -96,16 +96,23 @@
     <textarea name="description" id="description" rows="10" />
     <br />
     <button on:click={handleAlert} type="submit">Submit</button>
+
+    <p>Alternatively, you can send me an email here:</p>
+
+    <button><a href="mailto:jciscreative@gmail.com">auhhhhEmaaaaaiiillll</a></button>
   </div>
 
-  <p>This site was made using <a href="https://svelte.dev" target="blank">Svelte</a></p>
 </main>
+<p>This site was made using <a href="https://svelte.dev" target="blank">Svelte</a></p>
 
 <style>
+  
+
   main {
     text-align: center;
     max-width: 240px;
     margin: 0 auto;
+    
   }
 
   header {
@@ -136,7 +143,7 @@
 
   @media (min-width: 640px) {
     main {
-      max-width: 85%;
+      max-width: 70%;
     }
 
     h1 {
@@ -182,6 +189,10 @@
 
     #testemonial li {
       margin: 15px 0;
+    }
+
+    button a {
+      color: black;
     }
   }
 </style>
