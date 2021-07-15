@@ -18,6 +18,8 @@
     several frameworks.
   </h2>
 
+  <div class="card">
+
   <div id="bullets">
     <div>
       <h2>Frameworks</h2>
@@ -47,6 +49,17 @@
       </p>
     </div>
   </div>
+
+  <div id="paragraph">
+    <div>
+    <p>At our company, we do our best to make sure YOU are satisfied. We work extensively for your satisfaction - which is basically what I said in the first sentence.</p>
+  </div>
+    <div class="card">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magni, vero debitis commodi corporis ad, praesentium consectetur voluptatum in veniam aperiam sunt nisi rem. Eos quam modi eaque omnis sed.
+    </div>
+  </div>
+</div>
+  
 
   <div id="gallery" class="card">
     This area will be a gallery with images of projects
@@ -117,6 +130,8 @@
     border-radius: 10px;
   }
 
+ 
+
   #contact-form {
     border: 3px solid black;
     border-radius: 10px;
@@ -138,7 +153,6 @@
 
     .card {
       margin-bottom: 50px;
-      height: 30vh;
       border: 3px solid green;
       border-radius: 10px;
     }
@@ -153,11 +167,18 @@
       width: 25%;
     }
 
+    #paragraph {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
     .description {
       font-size: 18pt;
     }
 
     #testemonial ul {
+      display: flex;
+      justify-content: space-between;
       list-style: none;
       width: 40%;
     }
