@@ -1,10 +1,7 @@
 <script>
-  // 	const button = document.querySelector("button")
-
-  // function alert() {
-  // 	alert("I got a click!")
-  // }
-  // 	button.addEventListener("click", alert)
+  export function handleAlert() {
+  	alert("I got a click!")
+  }
 </script>
 
 <main>
@@ -98,10 +95,10 @@
     <label for="description">Describe your project</label>
     <textarea name="description" id="description" rows="10" />
     <br />
-    <button type="submit">Submit</button>
+    <button on:click={handleAlert} type="submit">Submit</button>
   </div>
 
-  <p>Some ending stuff</p>
+  <p>This site was made using <a href="https://svelte.dev" target="blank">Svelte</a></p>
 </main>
 
 <style>

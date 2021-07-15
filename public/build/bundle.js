@@ -154,6 +154,10 @@ var app = (function () {
     function space() {
         return text(' ');
     }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -385,6 +389,19 @@ var app = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
         if (value == null)
@@ -494,6 +511,10 @@ var app = (function () {
     	let button;
     	let t46;
     	let p4;
+    	let t47;
+    	let a;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -584,84 +605,89 @@ var app = (function () {
     			button.textContent = "Submit";
     			t46 = space();
     			p4 = element("p");
-    			p4.textContent = "Some ending stuff";
+    			t47 = text("This site was made using ");
+    			a = element("a");
+    			a.textContent = "Svelte";
     			attr_dev(h1, "class", "svelte-blhx8l");
-    			add_location(h1, file, 11, 4, 204);
+    			add_location(h1, file, 8, 4, 107);
     			attr_dev(header, "class", "svelte-blhx8l");
-    			add_location(header, file, 10, 2, 191);
-    			add_location(h20, file, 14, 2, 242);
-    			add_location(h21, file, 24, 6, 493);
+    			add_location(header, file, 7, 2, 94);
+    			add_location(h20, file, 11, 2, 145);
+    			add_location(h21, file, 21, 6, 396);
     			attr_dev(p0, "class", "description svelte-blhx8l");
-    			add_location(p0, file, 25, 6, 519);
+    			add_location(p0, file, 22, 6, 422);
     			attr_dev(div0, "class", "svelte-blhx8l");
-    			add_location(div0, file, 23, 4, 481);
-    			add_location(h22, file, 32, 6, 717);
+    			add_location(div0, file, 20, 4, 384);
+    			add_location(h22, file, 29, 6, 620);
     			attr_dev(p1, "class", "description svelte-blhx8l");
-    			add_location(p1, file, 33, 6, 741);
+    			add_location(p1, file, 30, 6, 644);
     			attr_dev(div1, "class", "svelte-blhx8l");
-    			add_location(div1, file, 31, 4, 705);
-    			add_location(h23, file, 42, 6, 1081);
+    			add_location(div1, file, 28, 4, 608);
+    			add_location(h23, file, 39, 6, 984);
     			attr_dev(p2, "class", "description svelte-blhx8l");
-    			add_location(p2, file, 43, 6, 1103);
+    			add_location(p2, file, 40, 6, 1006);
     			attr_dev(div2, "class", "svelte-blhx8l");
-    			add_location(div2, file, 41, 4, 1069);
+    			add_location(div2, file, 38, 4, 972);
     			attr_dev(div3, "id", "bullets");
     			attr_dev(div3, "class", "svelte-blhx8l");
-    			add_location(div3, file, 22, 2, 458);
-    			add_location(p3, file, 54, 4, 1462);
-    			add_location(div4, file, 53, 4, 1452);
+    			add_location(div3, file, 19, 2, 361);
+    			add_location(p3, file, 51, 4, 1365);
+    			add_location(div4, file, 50, 4, 1355);
     			attr_dev(div5, "class", "card svelte-blhx8l");
-    			add_location(div5, file, 56, 4, 1643);
+    			add_location(div5, file, 53, 4, 1546);
     			attr_dev(div6, "id", "paragraph");
     			attr_dev(div6, "class", "svelte-blhx8l");
-    			add_location(div6, file, 52, 2, 1427);
+    			add_location(div6, file, 49, 2, 1330);
     			attr_dev(div7, "class", "card svelte-blhx8l");
-    			add_location(div7, file, 20, 2, 436);
+    			add_location(div7, file, 17, 2, 339);
     			attr_dev(div8, "id", "gallery");
     			attr_dev(div8, "class", "card svelte-blhx8l");
-    			add_location(div8, file, 63, 2, 1905);
-    			add_location(h24, file, 68, 4, 2045);
-    			add_location(br0, file, 71, 38, 2132);
+    			add_location(div8, file, 60, 2, 1808);
+    			add_location(h24, file, 65, 4, 1948);
+    			add_location(br0, file, 68, 38, 2035);
     			attr_dev(li0, "class", "svelte-blhx8l");
-    			add_location(li0, file, 70, 6, 2089);
-    			add_location(br1, file, 78, 21, 2447);
+    			add_location(li0, file, 67, 6, 1992);
+    			add_location(br1, file, 75, 21, 2350);
     			attr_dev(li1, "class", "svelte-blhx8l");
-    			add_location(li1, file, 74, 6, 2185);
-    			add_location(br2, file, 83, 38, 2623);
+    			add_location(li1, file, 71, 6, 2088);
+    			add_location(br2, file, 80, 38, 2526);
     			attr_dev(li2, "class", "svelte-blhx8l");
-    			add_location(li2, file, 81, 6, 2505);
+    			add_location(li2, file, 78, 6, 2408);
     			attr_dev(ul, "class", "svelte-blhx8l");
-    			add_location(ul, file, 69, 4, 2078);
+    			add_location(ul, file, 66, 4, 1981);
     			attr_dev(div9, "id", "testemonial");
     			attr_dev(div9, "class", "card svelte-blhx8l");
-    			add_location(div9, file, 67, 2, 2005);
-    			add_location(h25, file, 90, 4, 2726);
+    			add_location(div9, file, 64, 2, 1908);
+    			add_location(h25, file, 87, 4, 2629);
     			attr_dev(label0, "for", "name");
-    			add_location(label0, file, 91, 4, 2759);
+    			add_location(label0, file, 88, 4, 2662);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "class", "svelte-blhx8l");
-    			add_location(input0, file, 92, 4, 2794);
+    			add_location(input0, file, 89, 4, 2697);
     			attr_dev(label1, "for", "email");
-    			add_location(label1, file, 94, 4, 2821);
+    			add_location(label1, file, 91, 4, 2724);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "class", "svelte-blhx8l");
-    			add_location(input1, file, 95, 4, 2858);
+    			add_location(input1, file, 92, 4, 2761);
     			attr_dev(label2, "for", "description");
-    			add_location(label2, file, 97, 4, 2885);
+    			add_location(label2, file, 94, 4, 2788);
     			attr_dev(textarea, "name", "description");
     			attr_dev(textarea, "id", "description");
     			attr_dev(textarea, "rows", "10");
     			attr_dev(textarea, "class", "svelte-blhx8l");
-    			add_location(textarea, file, 98, 4, 2944);
-    			add_location(br3, file, 99, 4, 3007);
+    			add_location(textarea, file, 95, 4, 2847);
+    			add_location(br3, file, 96, 4, 2910);
     			attr_dev(button, "type", "submit");
-    			add_location(button, file, 100, 4, 3018);
+    			add_location(button, file, 97, 4, 2921);
     			attr_dev(div10, "id", "contact-form");
     			attr_dev(div10, "class", "svelte-blhx8l");
-    			add_location(div10, file, 89, 2, 2698);
-    			add_location(p4, file, 103, 2, 3068);
+    			add_location(div10, file, 86, 2, 2601);
+    			attr_dev(a, "href", "https://svelte.dev");
+    			attr_dev(a, "target", "blank");
+    			add_location(a, file, 100, 30, 3022);
+    			add_location(p4, file, 100, 2, 2994);
     			attr_dev(main, "class", "svelte-blhx8l");
-    			add_location(main, file, 9, 0, 182);
+    			add_location(main, file, 6, 0, 85);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -737,12 +763,21 @@ var app = (function () {
     			append_dev(div10, button);
     			append_dev(main, t46);
     			append_dev(main, p4);
+    			append_dev(p4, t47);
+    			append_dev(p4, a);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", handleAlert, false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -757,7 +792,11 @@ var app = (function () {
     	return block;
     }
 
-    function instance($$self, $$props) {
+    function handleAlert() {
+    	alert("I got a click!");
+    }
+
+    function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	const writable_props = [];
@@ -766,13 +805,14 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	$$self.$capture_state = () => ({ handleAlert });
+    	return [handleAlert];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, {});
+    		init(this, options, instance, create_fragment, safe_not_equal, { handleAlert: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -780,6 +820,14 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
+    	}
+
+    	get handleAlert() {
+    		return handleAlert;
+    	}
+
+    	set handleAlert(value) {
+    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
