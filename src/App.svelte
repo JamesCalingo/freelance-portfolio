@@ -16,6 +16,14 @@
   </h2>
 
   <div class="card">
+    <div id="paragraph">
+      <div>
+      <h4>At our company, we do our best to make sure YOU are satisfied. We work extensively for your satisfaction - which is basically what I said in the first sentence.</h4>
+    </div>
+      <div class="card">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magni, vero debitis commodi corporis ad, praesentium consectetur voluptatum in veniam aperiam sunt nisi rem. Eos quam modi eaque omnis sed.
+      </div>
+    </div>
 
   <div id="bullets">
     <div>
@@ -47,14 +55,6 @@
     </div>
   </div>
 
-  <div id="paragraph">
-    <div>
-    <h4>At our company, we do our best to make sure YOU are satisfied. We work extensively for your satisfaction - which is basically what I said in the first sentence.</h4>
-  </div>
-    <div class="card">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magni, vero debitis commodi corporis ad, praesentium consectetur voluptatum in veniam aperiam sunt nisi rem. Eos quam modi eaque omnis sed.
-    </div>
-  </div>
 </div>
   
 
@@ -92,14 +92,14 @@
     <label for="email">Email</label>
     <input type="text" />
 
-    <label for="description">Describe your project</label>
+    <label for="description">Describe your idea</label>
     <textarea name="description" id="description" rows="10" />
     <br />
     <button on:click={handleAlert} type="submit">Submit</button>
 
     <p>Alternatively, you can send me an email here:</p>
 
-    <button><a href="mailto:jciscreative@gmail.com">auhhhhEmaaaaaiiillll</a></button>
+    <button><a href="mailto:jciscreative@gmail.com">Email me!</a></button>
   </div>
 
 </main>
