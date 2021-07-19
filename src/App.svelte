@@ -14,7 +14,7 @@
     web developer.
   </h2>
 
-  <div class="card">
+  <div>
     <div id="paragraph">
       <div>
         <h4>
@@ -23,9 +23,8 @@
         </h4>
       </div>
       <div class="card">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa magni,
-        vero debitis commodi corporis ad, praesentium consectetur voluptatum in
-        veniam aperiam sunt nisi rem. Eos quam modi eaque omnis sed.
+        <p>Want to get in touch?</p>
+        <button><a href="#contact-form">Let's talk!</a></button>
       </div>
     </div>
 
@@ -47,18 +46,15 @@
       </div>
 
       <div>
-        <h2>card 3</h2>
+        <h2>Optimal performance</h2>
         <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
-          quos tenetur libero soluta. Nihil voluptate, modi atque odit, rem
-          similique, delectus voluptates repellat laborum quasi velit
-          accusantium temporibus tempore quas?
+        Work on Search Engine Optimization (SEO), data-driven research, and more.
         </p>
       </div>
     </div>
   </div>
 
-  <div id="gallery" class="card">
+  <div id="gallery">
     This area will be a gallery with images of projects
   </div>
 
@@ -105,8 +101,9 @@
     <button on:click={handleAlert} type="submit">Submit</button>
 
     <p>Alternatively, you can send me an email here:</p>
-
-    <button><a href="mailto:jciscreative@gmail.com">Email me!</a></button>
+    <button>
+      <a href="mailto:jciscreative@gmail.com">Email me!</a>
+    </button>
   </div>
 </main>
 <p>
@@ -123,6 +120,7 @@
 
   header {
     justify-content: center;
+    font-weight: bolder;
     margin-bottom: 30px;
     height: 150px;
     line-height: 150px;
@@ -138,6 +136,12 @@
     margin-bottom: 50px;
     border: 3px solid green;
     border-radius: 10px;
+  }
+
+  #gallery {
+    height: 400px;
+    border: 3px dashed black;
+    margin-bottom: 50px;
   }
 
   #contact-form {
@@ -166,6 +170,10 @@
       height: 50px;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16pt;
+    }
+
+    button a {
+      color: white;
     }
 
     .card {
