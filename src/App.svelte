@@ -30,7 +30,7 @@
 
     <div id="bullets">
       <div>
-        <h2>Frameworks</h2>
+        <h2>Scalability/Maintanable development</h2>
         <p class="description">
           Using the latest frameworks and tools, make a website that looks and
           functions well on computers, phones, and tablets.
@@ -38,7 +38,7 @@
       </div>
 
       <div>
-        <h2>Accesibility</h2>
+        <h2>Accesibility/Web Standards</h2>
         <p class="description">
           Make a site that is accessible to everyone - most especially those
           with disablilites.
@@ -46,7 +46,7 @@
       </div>
 
       <div>
-        <h2>Optimal performance</h2>
+        <h2>Performance</h2>
         <p class="description">
         Work on Search Engine Optimization (SEO), data-driven research, and more.
         </p>
@@ -62,9 +62,7 @@
     <h2>What they're saying</h2>
     <ul>
       <li>
-        <blockquote>"You're my favorite customer."</blockquote>
-
-        -Me, to you one day
+        <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nam sed, ex natus animi voluptate dolor molestiae. Ullam hic ratione officiis dicta. Labore aspernatur consequuntur quam ex atque quidem dolorum."</blockquote>
       </li>
       <li>
         <blockquote>
@@ -73,16 +71,11 @@
           saepe reiciendis? Soluta id molestias accusantium sint facere ducimus
           nulla dolores est."
         </blockquote>
-
-        -Some generic Latin text
       </li>
       <li>
         <blockquote>
-          "This isn't actually a quote from anyone. It's just some stuff I'm
-          writing in as a filler quote."
+         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ipsa, at temporibus dolorum labore eos fugit quae vitae eum non eligendi alias, laborum, velit cum voluptatibus expedita qui ratione itaque.""
         </blockquote>
-
-        -Stranger on the Internet
       </li>
     </ul>
   </div>
@@ -176,6 +169,12 @@
       color: white;
     }
 
+    blockquote {
+  
+      height: 200px;
+      border: 3px solid orange;
+    }
+
     .card {
       margin-bottom: 50px;
       border: 3px solid green;
@@ -202,8 +201,8 @@
     }
 
     #testemonial ul {
+      display: flex;
       list-style: none;
-      width: 40%;
     }
 
     #testemonial li {
