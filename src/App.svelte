@@ -55,7 +55,7 @@
   </div>
 
   <div id="gallery">
-    This area will be a gallery with images of projects
+   <img src="img/wdiw.png" alt="Where do I Worship">
   </div>
 
   <div id="testemonial" class="card">
@@ -84,11 +84,12 @@
     <h2>Let's get in touch!</h2>
     <label for="name">Name</label>
     <input type="text" />
-
+<br>
     <label for="email">Email</label>
     <input type="text" />
-
+    <br>
     <label for="description">Describe your idea</label>
+    <br>
     <textarea name="description" id="description" rows="10" />
     <br />
     <button on:click={handleAlert} type="submit">Submit</button>
@@ -132,7 +133,8 @@
   }
 
   #gallery {
-    height: 400px;
+    height: 500px;
+    align-items: center;
     border: 3px dashed black;
     margin-bottom: 50px;
   }
@@ -165,12 +167,7 @@
       font-size: 16pt;
     }
 
-    button a {
-      color: white;
-    }
-
     blockquote {
-  
       height: 200px;
       border: 3px solid orange;
     }

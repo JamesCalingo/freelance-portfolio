@@ -15,21 +15,14 @@ body {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: white;
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
+img {
+	height: 400px;
 }
 
-a:visited {
-	color: rgb(0,80,160);
-}
-
-label {
-	display: block;
-}
 
 input, button, select, textarea {
 	font-family: inherit;
