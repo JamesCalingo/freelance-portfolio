@@ -1,3 +1,9 @@
+A portfolio for more freelance-y type work.
+
+View it at jciscreative.dev.
+
+Built with Svelte.
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
