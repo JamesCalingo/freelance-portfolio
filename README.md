@@ -1,6 +1,6 @@
 A portfolio for more freelance-y type work.
 
-View it at jciscreative.dev.
+View it at [jciscreative.dev](https://jciscreative.dev).
 
 Built with Svelte.
 
