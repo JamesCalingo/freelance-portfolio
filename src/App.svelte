@@ -55,7 +55,8 @@
   </div>
 
   <div id="gallery">
-   <img src="img/wdiw.png" alt="Where do I Worship">
+   <img src="img/wdiw-phone.png" alt="Where do I Worship">
+   <img src="img/gitg-phone.png" alt="Gifts in the Gazebo">
   </div>
 
   <div id="testemonial" class="card">
